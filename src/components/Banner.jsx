@@ -12,8 +12,9 @@ const Banner = () => {
         <motion.div
           className="space-y-4 flex-1"
           initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
         >
           <p className="montserrat text-[#C4CFDE]">WELCOME TO MY WORLD..!!</p>
 
@@ -50,8 +51,9 @@ const Banner = () => {
         <motion.div
           className="flex-1"
           initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
         >
           <img className="w-72 md:w-80 rounded-full border-4 border-white mx-auto" src={image} alt="Sourav Mitra" />
         </motion.div>

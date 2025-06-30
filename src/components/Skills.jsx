@@ -25,7 +25,7 @@ const LeftSkillCard = ({ icon: Icon, name, color }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: false }}
     transition={{ duration: 0.4 }}
-    className=" text-center gap-3 bg-gray-800 rounded-lg p-3 shadow-md"
+    className=" text-center gap-3 bg-gray-800 rounded-lg p-3 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]"
   >
     <div className={`w-10 h-10 flex mx-auto items-center justify-center bg-gray-700 rounded-full`}>
       <Icon className={`text-xl ${color}`} />
@@ -40,7 +40,7 @@ const RightSkillCard = ({ icon: Icon, name, color, percentage }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: false }}
     transition={{ duration: 0.4 }}
-    className="bg-gray-800 rounded-lg p-4 shadow-md flex flex-col gap-2"
+    className="bg-[#1B1E22] rounded-lg p-4 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34] flex flex-col gap-2"
   >
     <div className="flex items-center gap-3">
       <div className={`w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full`}>
@@ -80,7 +80,6 @@ const Skills = () => {
     { icon: FaFigma, name: "Figma", color: "text-pink-500", percentage: 70 },
     { icon: FaGitAlt, name: "Git", color: "text-orange-600", percentage: 80 },
     { icon: FaGithub, name: "GitHub", color: "text-white", percentage: 85 },
-    // { icon: SiVisualstudiocode, name: "VS Code", color: "text-blue-400", percentage: 90 },
     { icon: SiNetlify, name: "Netlify", color: "text-green-400", percentage: 70 },
     { icon: SiVercel, name: "Vercel", color: "text-white", percentage: 70 },
   ];
@@ -116,7 +115,7 @@ const Skills = () => {
             className={`px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300
               ${
                 activeTab === tab
-                  ? "bg-blue-600 text-white shadow-lg"
+                  ? "bg-blue-600 text-white shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]"
                   : "bg-gray-700 text-gray-300 hover:bg-blue-500 hover:text-white"
               }
             `}
@@ -135,9 +134,9 @@ const Skills = () => {
         {/* Left Card */}
         <div className="bg-[#1B1E22] rounded-2xl p-6 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]">
           <h3 className="text-xl font-semibold mb-6 text-center">Skills</h3>
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-4 ">
             {leftPairs.map((pair, idx) => (
-              <div key={idx} className="grid grid-cols-2 gap-4">
+              <div key={idx} className="grid grid-cols-2 gap-4 ">
                 {pair.map((skill) => (
                   <LeftSkillCard key={skill.name} {...skill} />
                 ))}

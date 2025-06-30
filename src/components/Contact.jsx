@@ -22,7 +22,8 @@ const Contact = () => {
       </h2>
       <div
         data-aos="fade-up"
-        data-aos-duration="1500"
+              data-aos-duration="1500"
+              
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
       >
         {/* Left Card */}

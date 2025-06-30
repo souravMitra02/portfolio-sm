@@ -37,7 +37,7 @@ const Banner = () => {
                 ]}
                 loop={true}
                 cursor
-                cursorStyle="|"
+                cursorStyle="_"
                 typeSpeed={50}
                 deleteSpeed={30}
                 delaySpeed={1500}

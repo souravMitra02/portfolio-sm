@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaDownload } from 'react-icons/fa';
+import { FaCode, FaDownload } from 'react-icons/fa';
 import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
@@ -57,7 +57,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="text-xl font-bold text-white">Sourav</a>
+        <FaCode size={40}  className="text-[#FF014F]" />
       </div>
 
       {/* Center - Desktop Nav Items */}

@@ -23,7 +23,7 @@ const Experience = () => {
       >
         <div className="bg-[#212428] rounded-xl text-center py-6 px-4">
           <div className="flex justify-center mb-2">
-            <FaCode size={28} className="text-[#FF014F]" />
+            <FaCode size={28}  className="text-[#FF014F]" />
           </div>
           <p className="text-lg mb-1 text-gray-300">Total Experience</p>
           <h1 className="text-5xl font-extrabold text-[#FF014F]">

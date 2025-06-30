@@ -21,7 +21,7 @@ const Banner = () => {
   Hi, I’m <span className="text-[#FF014F]">Sourav Mitra</span>
 </h3>
 
-<h3 className="text-2xl md:text-3xl font-bold text-white">
+<h3 className="text-2xl md:text-3xl font-semibold text-white montserrat">
   I’m a{' '}
   <span className="text-[#E6003C]">
     <Typewriter

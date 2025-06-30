@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -19,31 +19,31 @@ import {
   SiNetlify,
 } from "react-icons/si";
 
+// Single Small Card (No Hover)
 const LeftSkillCard = ({ icon: Icon, name, color }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
-    className=" text-center gap-3 bg-gray-800 rounded-lg p-3 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]"
+    className="text-center gap-3 bg-gray-800 rounded-lg p-3 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]"
   >
-    <div className={`w-10 h-10 flex mx-auto items-center justify-center bg-gray-700 rounded-full`}>
+    <div className="w-10 h-10 flex mx-auto items-center justify-center bg-gray-700 rounded-full">
       <Icon className={`text-xl ${color}`} />
     </div>
     <p className="text-white font-medium">{name}</p>
   </motion.div>
 );
 
+// Proficiency Bar Card (No Hover)
 const RightSkillCard = ({ icon: Icon, name, color, percentage }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
-    className="bg-[#1B1E22] rounded-lg p-4 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34] flex flex-col gap-2"
+    className="bg-[#1B1E22] rounded-lg p-4 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]"
   >
     <div className="flex items-center gap-3">
-      <div className={`w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full`}>
+      <div className="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full">
         <Icon className={`text-xl ${color}`} />
       </div>
       <p className="text-white font-semibold">{name}</p>
@@ -58,6 +58,7 @@ const RightSkillCard = ({ icon: Icon, name, color, percentage }) => (
   </motion.div>
 );
 
+// Main Skills Component
 const Skills = () => {
   const [activeTab, setActiveTab] = useState("frontend");
 
@@ -129,31 +130,51 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Main Cards Container */}
-      <div   className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* Left Card */}
-        <div className="bg-[#1B1E22] rounded-2xl p-6 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]">
-          <h3 className="text-xl font-semibold mb-6 text-center">Skills</h3>
-          <div className="grid grid-cols-1 gap-4 ">
-            {leftPairs.map((pair, idx) => (
-              <div key={idx} className="grid grid-cols-2 gap-4 ">
-                {pair.map((skill) => (
-                  <LeftSkillCard key={skill.name} {...skill} />
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Cards Container */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        <AnimatePresence mode="wait">
+          {/* Left Card (Skills) */}
+          <motion.div
+            key={`left-${activeTab}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-[#1B1E22] rounded-2xl p-6 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34] hover:shadow-[0_0_30px_#FF014F] transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-6 text-center">Skills</h3>
+            <div className="grid grid-cols-1 gap-4">
+              {leftPairs.map((pair, idx) => (
+                <div key={idx} className="grid grid-cols-2 gap-4">
+                  {pair.map((skill) => (
+                    <LeftSkillCard key={skill.name} {...skill} />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Right Card */}
-        <div className="bg-[#1B1E22] rounded-2xl p-6 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34]">
-          <h3 className="text-xl font-semibold mb-6 text-center">Proficiency</h3>
-          <div className="grid grid-cols-1 gap-4">
-            {skills.map((skill) => (
-              <RightSkillCard key={skill.name} {...skill} />
-            ))}
-          </div>
-        </div>
+          {/* Right Card (Proficiency) */}
+          <motion.div
+            key={`right-${activeTab}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-[#1B1E22] rounded-2xl p-6 shadow-[16px_16px_20px_#0f1012,_-10px_-10px_60px_#292e34] hover:shadow-[0_0_30px_#FF014F] transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-6 text-center">
+              Proficiency
+            </h3>
+            <div className="grid grid-cols-1 gap-4">
+              {skills.map((skill) => (
+                <RightSkillCard key={skill.name} {...skill} />
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

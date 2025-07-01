@@ -3,6 +3,7 @@ import image from '../assets/banner.jpg';
 import { Typewriter } from 'react-simple-typewriter';
 import { Facebook, Github, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { FaDownload } from 'react-icons/fa';
 
 const Banner = () => {
   return (
@@ -86,6 +87,18 @@ const Banner = () => {
                 <Github size={20} color="#C4CFDE" strokeWidth={1.5} />
               </motion.a>
             </div>
+
+            {/* DOWNLOAD CV Button - Mobile Only */}
+            <div className="flex justify-center md:justify-start sm:hidden mt-10">
+              <a
+                href="/your-resume.pdf"
+                download
+                className="flex items-center justify-center bg-[#FF014F] text-white px-4 py-2 rounded-full font-semibold hover:scale-105 transition-transform text-sm"
+              >
+                <FaDownload className="text-base" />
+                <span className="ml-2">DOWNLOAD CV</span>
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -109,6 +122,7 @@ const Banner = () => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
         </motion.div>
+        
       </div>
     </section>
   );

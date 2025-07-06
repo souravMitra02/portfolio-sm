@@ -22,14 +22,14 @@ const Navbar = () => {
         to={item.to}
         className="group relative px-3 py-2 flex justify-center items-center"
       >
-        {/* Mobile: icon only | Desktop: text only */}
+        
         <span className="block lg:hidden text-xl group-hover:text-[#FF014F] transition-all duration-300">
           {item.icon}
         </span>
         <span className="hidden lg:inline group-hover:text-[#FF014F] transition-all duration-300">
           {item.name}
         </span>
-        {/* Underline effect */}
+        
         <span className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[2px] bg-[#FF014F] transition-all duration-300"></span>
       </HashLink>
     </li>
@@ -56,12 +56,12 @@ const Navbar = () => {
       {/* Right - CV Button */}
      <div className="navbar-end">
   <a
-    href="/your-resume.pdf"
+    href="/sourav-mitra.pdf"
     download
     className="hidden sm:flex items-center justify-center bg-[#FF014F] text-white px-3 py-2 rounded-full font-semibold hover:scale-105 transition-transform text-sm"
   >
     <FaDownload className="text-base sm:text-lg" />
-    <span className="hidden sm:inline ml-2">DOWNLOAD CV</span>
+    <span className="hidden sm:inline ml-2">DOWNLOAD RESUME</span>
   </a>
 </div>
     </div>

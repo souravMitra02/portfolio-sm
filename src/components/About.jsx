@@ -25,25 +25,14 @@ const About = () => {
             VISIT MY PORTFOLIO & HIRE ME
           </p>
 
-          <p className="poppins leading-7 tracking-wide text-sm md:text-base text-justify mt-6">
-            Hi! I’m{" "}
-            <span className="text-white font-semibold">Sourav Mitra</span>, a
-            curious learner who finds joy in building with code. My journey
-            didn’t begin with a degree, just a deep interest in how websites
-            work — buttons, colors, and animations. That led me from HTML to
-            React, step by step. Now I work as a{" "}
-            <span className="text-white font-semibold">Frontend Developer</span>{" "}
-            with a passion for the MERN stack. I enjoy creating responsive,
-            smooth, and interactive user experiences. When not coding, I love
-            sports, sketching, and quiet thinking. These refresh my creativity.
-            I believe good developers are lifelong learners and good listeners.
-            I’m growing every day — as a developer and as a person.
-          </p>
+         <p className="poppins leading-7 tracking-wide text-sm md:text-base text-justify mt-6">
+  Hi! I’m <span className="text-white font-semibold">Sourav Mitra</span>, a curious learner who enjoys building with code. My journey didn’t begin with a degree, just a deep interest in how websites work — buttons, colours, and animations. That led me from HTML to React, step by step. Now I work as a <span className="text-white font-semibold">Frontend Developer</span> who is passionate about the MERN stack. I enjoy creating responsive, smooth, and interactive user experiences. When not coding, I love sports, sketching, and quiet thinking. These refresh my creativity. I believe good developers are lifelong learners and good listeners. I’m growing every day — as a developer and as a person.
+</p>
 
-          <p className="italic text-sm text-gray-400 text-center mt-6">
-            Thanks for visiting — I’m excited for what lies ahead in this
-            journey.
-          </p>
+<p className="italic text-sm text-gray-400 text-center mt-6">
+  Thanks for visiting. I’m excited about what lies ahead in this journey.
+</p>
+
         </div>
       </motion.div>
     </section>

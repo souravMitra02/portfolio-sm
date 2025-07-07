@@ -47,7 +47,7 @@ const Banner = () => {
           </h3>
 
           <p className="text-[#C4CFDE] poppins max-w-lg mx-auto md:mx-0">
-            As a passionate new developer, I’m focused on learning modern web technologies and building clean, responsive user interfaces. Every project helps me grow, and I’m excited to keep learning and improving every day.
+           As a passionate new developer, I’m dedicated to learning modern web technologies and crafting clean, responsive user interfaces. Each project helps me grow, and I’m excited to continue learning and growing each day.
           </p>
 
           {/* Social Links */}
